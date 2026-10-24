@@ -1,3 +1,4 @@
+import { CHILI_PITCH } from '../content/data.ts'
 import { Banat } from '../components/Banat.tsx'
 import { Checker } from '../components/Checker.tsx'
 import { PancitCanton } from '../components/PancitCanton.tsx'
@@ -55,7 +56,10 @@ export default function Chilimansi() {
               <h1 className="sticker-type mt-2 font-display text-[clamp(56px,8vw,112px)] leading-[0.9] font-extrabold tracking-[-0.03em]">
                 One pack. ₱15.
               </h1>
-              <p className="mt-5 max-w-[40ch] text-[19px] font-semibold">
+              <p className="mt-5 max-w-[44ch] text-[19px] font-semibold">
+                {CHILI_PITCH}
+              </p>
+              <p className="mt-3 max-w-[44ch] text-[17px]">
                 No account, no sign-up. Scan with GCash, Maya or any bank app
                 that supports InstaPay. Both codes are set to ₱15, one pack of
                 chilimansi pancit canton.
