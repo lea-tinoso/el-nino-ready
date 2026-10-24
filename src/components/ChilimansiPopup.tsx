@@ -5,11 +5,24 @@ import { PancitCanton } from './PancitCanton.tsx'
 
 export const CHILIMANSI_URL = `${import.meta.env.BASE_URL}chilimansi/`
 
-// The optional "buy me a chilimansi" ask. Shows once per phone: after 40 seconds or at the hotlines,
-// never on first load. Closing it in any way counts as seen.
-export function ChilimansiPopup() {
+// The optional "buy me a chilimansi" ask. Shows once per phone, never on first load: right after the
+// visitor gets something from the site (picks a province or ticks an item), at the hotlines, or after
+// 25 seconds. Closing it in any way counts as seen.
+export function ChilimansiPopup({ engaged }: { engaged: boolean }) {
   const [seen, setSeen] = useStoredState('chili-seen', false)
   const ref = useRef<HTMLDialogElement>(null)
+  // Saved progress from an earlier visit doesn't count; only a new action in this visit does.
+  const engagedAtLoad = useRef(engaged)
+
+  useEffect(() => {
+    if (seen || !engaged || engagedAtLoad.current) return
+    // A short pause so they see their result before the ask.
+    const timer = window.setTimeout(() => {
+      const d = ref.current
+      if (d && !d.open) d.showModal()
+    }, 2_000)
+    return () => window.clearTimeout(timer)
+  }, [seen, engaged])
 
   useEffect(() => {
     if (seen) return
@@ -17,7 +30,7 @@ export function ChilimansiPopup() {
       const d = ref.current
       if (d && !d.open) d.showModal()
     }
-    const timer = window.setTimeout(open, 40_000)
+    const timer = window.setTimeout(open, 25_000)
     const hotlines = document.getElementById('hotlines')
     const io = new IntersectionObserver(([e]) => e.isIntersecting && open(), {
       threshold: 0.4,
