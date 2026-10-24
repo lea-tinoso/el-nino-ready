@@ -1,6 +1,6 @@
 import { Banat } from './Banat.tsx'
 
-// The 20 second launch reel, under the hero. It loads only when someone presses play.
+// The 24 second launch reel, under the hero. It loads only when someone presses play.
 export function Reel() {
   return (
     <section
@@ -11,7 +11,7 @@ export function Reel() {
       <div className="mx-auto grid max-w-[1240px] items-center gap-10 md:grid-cols-[1fr_auto] md:gap-16">
         <div>
           <p className="text-[13px] font-extrabold tracking-[0.08em] text-line uppercase">
-            The 20-second tour
+            The 24-second tour
           </p>
           <h2
             id="reel-title"
@@ -25,7 +25,7 @@ export function Reel() {
             handy. Share it with your family group chat.
           </p>
           <Banat label="Speed run" className="mt-8 -rotate-2">
-            20 seconds lang ito. Mas mabilis pa sa pag-release ng ayuda.
+            24 seconds lang ito. Mas mabilis pa sa pag-release ng ayuda.
           </Banat>
         </div>
         <div className="mx-auto w-[min(300px,78vw)] rotate-2 rounded-[28px] border-3 border-line bg-post p-2 shadow-[6px_6px_0_var(--color-line)]">
@@ -36,7 +36,7 @@ export function Reel() {
             controls
             playsInline
             preload="none"
-            aria-label="20-second video tour of El Niño Ready"
+            aria-label="24-second video tour of El Niño Ready"
           />
         </div>
       </div>
