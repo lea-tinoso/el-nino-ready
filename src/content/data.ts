@@ -472,3 +472,45 @@ export const TIMELINE: { when: string; rows: [string, string][] }[] = [
   },
   { when: 'Until mid-2027', rows: [['Keep the habits going', '6+ months']] },
 ]
+
+// What's next. Edit freely: rows are [when, title, one line].
+export type RoadmapWhen = 'Next' | 'Later' | 'Maybe'
+export const ROADMAP: [RoadmapWhen, string, string][] = [
+  [
+    'Next',
+    'Works offline',
+    'Open the checklist and hotlines even with no signal or no load.',
+  ],
+  [
+    'Next',
+    'Printable checklist',
+    'One page for the ref door or the barangay bulletin board.',
+  ],
+  [
+    'Later',
+    'Tagalog, Cebuano, Ilocano',
+    'The whole guide in more languages, not just the headings.',
+  ],
+  [
+    'Later',
+    'Heat index alerts',
+    "Today's PAGASA heat index for your province, with what to do.",
+  ],
+  [
+    'Maybe',
+    'Water interruption schedule',
+    "Links to your water utility's advisories by province.",
+  ],
+  [
+    'Maybe',
+    'Province-level detail',
+    'Go past region-level once PAGASA data allows it.',
+  ],
+]
+
+// lea's calendar, as shown in What's next.
+export const SCHEDULE: [string, string][] = [
+  ['November', 'Thailand. Updates may be slow.'],
+  ['December', 'BTS. Updates may be very slow.'],
+  ['January', 'Back to shipping.'],
+]

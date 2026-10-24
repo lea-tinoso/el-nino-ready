@@ -1,3 +1,4 @@
+import { ChilimansiPopup } from '../components/ChilimansiPopup.tsx'
 import { Checker } from '../components/Checker.tsx'
 import { Checklist } from '../components/Checklist.tsx'
 import { Faq } from '../components/Faq.tsx'
@@ -7,6 +8,7 @@ import { Hotlines } from '../components/Hotlines.tsx'
 import { ProvinceCheck } from '../components/ProvinceCheck.tsx'
 import { SubNav } from '../components/SubNav.tsx'
 import { Timeline } from '../components/Timeline.tsx'
+import { WhatsNext } from '../components/WhatsNext.tsx'
 import { useReveal } from '../lib/reveal.ts'
 import { useStoredState } from '../lib/storage.ts'
 
@@ -32,9 +34,11 @@ export default function Home() {
         <Checker />
         <Faq />
         <Hotlines />
+        <WhatsNext />
       </main>
       <Checker />
       <Footer />
+      <ChilimansiPopup />
     </div>
   )
 }

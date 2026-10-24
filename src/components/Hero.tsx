@@ -174,7 +174,7 @@ export function Hero() {
           id="hero-title"
           className="sticker-type font-display text-[clamp(56px,10vw,132px)] leading-[0.9] font-extrabold tracking-[-0.03em]"
         >
-          <span className="hero-word block">Tayo-tayo</span>
+          <span className="hero-word block">Tayo-tayo</span>{' '}
           <span className="hero-word hero-word-2 block">na lang.</span>
         </h1>
         <p className="mx-auto mt-6 max-w-[34ch] text-[clamp(18px,1.6vw,22px)] leading-snug font-semibold">

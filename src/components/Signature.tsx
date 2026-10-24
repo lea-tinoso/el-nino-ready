@@ -38,6 +38,13 @@ export function Signature() {
           >
             portfolio ↗
           </a>
+          <span aria-hidden> · </span>
+          <a
+            className="font-semibold text-link hover:underline"
+            href={`${import.meta.env.BASE_URL}chilimansi/`}
+          >
+            buy me a chilimansi
+          </a>
         </p>
       </div>
     </aside>
