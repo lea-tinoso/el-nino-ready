@@ -296,7 +296,7 @@ export const CHECKLIST: ChecklistGroup[] = [
     items: [
       [
         'heat-index',
-        "Check PAGASA's heat index. 42°C and up is danger",
+        "Check PAGASA's heat index on the Panahon app or panahon.gov.ph. 42°C and up is danger",
         'Daily',
       ],
       [
@@ -508,7 +508,17 @@ export const ROADMAP: [RoadmapWhen, string, string][] = [
   [
     'Later',
     'Heat index alerts',
-    "Today's PAGASA heat index for your province, with what to do.",
+    "Today's PAGASA heat index for your province, with what to do. For now, the Panahon app (panahon.gov.ph) shows PAGASA's data.",
+  ],
+  [
+    'Later',
+    'Guides by group',
+    'Tips for farmers, fisherfolk, small businesses, and homes with elderly or babies.',
+  ],
+  [
+    'Maybe',
+    'Community tips',
+    'Tips from fellow Filipinos, checked by a moderator before they go up.',
   ],
   [
     'Maybe',
