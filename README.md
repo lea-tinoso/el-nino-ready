@@ -5,7 +5,7 @@ province and a household checklist saved on your phone.
 
 - Content: `src/content/data.ts` (update monthly when PAGASA issues a new El Niño advisory)
 - Run: `npm install && npm run dev`
-- Deploy: push to `main`; GitHub Actions builds and publishes to GitHub Pages
+- Deploy: Vercel builds and publishes every push to `main` (preview URLs for pull requests). GitHub Actions only runs lint and build.
 
 ---
 

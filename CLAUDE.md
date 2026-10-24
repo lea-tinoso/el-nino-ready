@@ -47,5 +47,5 @@ The skills are symlinked from `.claude/skills/<name>` into `ui-kit/`, so they lo
 
 - Content (PAGASA statuses, checklist, FAQ, hotlines) lives in `src/content/data.ts`. PAGASA issues an El Niño
   advisory monthly: update `ADVISORY`, the region/province levels and `STATEMENT` when a new one lands.
-- Deploys to GitHub Pages from `main` via `.github/workflows/deploy.yml` (`BASE_PATH` is the repo name).
+- Deploys to Vercel from `main` (Vite preset, output `dist`, base `/`). `.github/workflows/ci.yml` runs lint and build. `/chilimansi/` is a second Vite entry (`chilimansi/index.html`).
 - Design direction and tokens: `DESIGN.md` and `.taste-skill/direction.json`.
