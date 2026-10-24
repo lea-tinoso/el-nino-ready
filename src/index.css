@@ -1,5 +1,5 @@
-@import '@fontsource-variable/hanken-grotesk';
 @import '@fontsource-variable/bricolage-grotesque';
+@import '@fontsource/caveat/700.css';
 @import 'tailwindcss';
 
 /*
@@ -32,8 +32,14 @@
   --color-mint: #23a094;
   --color-clay: #c98b5a;
   --color-plum: #a63c93;
+  --color-danger: #d7263d;
+  --color-mint-soft: #9be3d6;
+  --color-soft: #4a4a46;
+  --color-link: #1f5fd1;
+  --font-hand: 'Caveat', cursive;
 
-  --font-sans: 'Hanken Grotesk Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-sans:
+    'Bricolage Grotesque Variable', ui-sans-serif, system-ui, sans-serif;
   --font-display:
     'Hanken Grotesk Variable', ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, monospace;
@@ -54,14 +60,14 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-canvas font-sans text-copy text-body antialiased;
+    @apply bg-paper font-sans text-line text-body antialiased;
     line-height: 1.5;
   }
   ::selection {
-    @apply bg-primary text-on-primary;
+    @apply bg-sun text-line;
   }
   :focus-visible {
-    outline: 2px solid var(--color-primary);
+    outline: 3px solid var(--color-link);
     outline-offset: 3px;
   }
 }
@@ -288,4 +294,15 @@ details[open] .chev {
   100% {
     opacity: 0;
   }
+}
+
+.checker {
+  background-color: var(--color-paper);
+  background-image: conic-gradient(
+    var(--color-line) 25%,
+    transparent 0 50%,
+    var(--color-line) 0 75%,
+    transparent 0
+  );
+  background-size: 32px 32px;
 }
