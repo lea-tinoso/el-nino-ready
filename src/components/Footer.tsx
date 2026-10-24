@@ -20,7 +20,7 @@ export function Footer() {
     const data = {
       title: 'El Niño Ready',
       text: 'Tayo-tayo na lang: El Niño prep for every Filipino.',
-      url: location.href.split('#')[0],
+      url: 'https://www.elninoready.org/',
     }
     try {
       if (navigator.share) {
