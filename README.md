@@ -1,6 +1,6 @@
 # El Niño Ready
 
-Tayo-tayo na lang: El Niño prep for every Filipino. A no-sign-up page that shows what PAGASA expects in your
+Tayo-tayo na lang: El Niño prep for every Filipino. Live at https://www.elninoready.org. A no-sign-up page that shows what PAGASA expects in your
 province and a household checklist saved on your phone.
 
 - Content: `src/content/data.ts` (update monthly when PAGASA issues a new El Niño advisory)
