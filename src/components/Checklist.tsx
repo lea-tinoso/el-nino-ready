@@ -1,5 +1,6 @@
 import { CHECKLIST } from '../content/data.ts'
 import { Banat } from './Banat.tsx'
+import { ShareScore } from './ShareScore.tsx'
 
 type Props = {
   done: Record<string, boolean>
@@ -8,13 +9,14 @@ type Props = {
 }
 
 const TOTAL = CHECKLIST.reduce((n, g) => n + g.items.length, 0)
-const GROUP_BG = [
-  'bg-slate text-cream',
-  'bg-heat text-cream',
-  'bg-sun',
-  'bg-post text-cream',
-  'bg-pink',
-]
+const GROUP_BG: Record<string, string> = {
+  learn: 'bg-plum text-cream',
+  water: 'bg-slate text-cream',
+  heat: 'bg-heat text-cream',
+  food: 'bg-sun',
+  power: 'bg-post text-cream',
+  fire: 'bg-pink',
+}
 
 export function Checklist({ done, onToggle, onClear }: Props) {
   const count = CHECKLIST.reduce(
@@ -50,19 +52,19 @@ export function Checklist({ done, onToggle, onClear }: Props) {
 
         <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_300px] lg:items-start">
           <div className="grid gap-6 md:grid-cols-2">
-            {CHECKLIST.map((group, gi) => (
+            {CHECKLIST.map((group) => (
               <div
                 key={group.id}
                 data-reveal
                 className="overflow-hidden rounded-3xl border-3 border-line bg-white text-ink-warm shadow-[6px_6px_0_var(--color-line)]"
               >
                 <h3
-                  className={`border-b-3 border-line px-5 py-3 font-display text-[22px] font-extrabold ${GROUP_BG[gi % GROUP_BG.length]}`}
+                  className={`border-b-3 border-line px-5 py-3 font-display text-[22px] font-extrabold ${GROUP_BG[group.id] ?? 'bg-sun'}`}
                 >
                   {group.title}
                 </h3>
                 <ul className="px-3 py-2">
-                  {group.items.map(([id, text, value]) => (
+                  {group.items.map(([id, text, value, why]) => (
                     <li key={id}>
                       <label className="flex min-h-11 cursor-pointer items-start gap-3 rounded-xl px-2 py-2 transition hover:bg-paper">
                         <input
@@ -71,10 +73,17 @@ export function Checklist({ done, onToggle, onClear }: Props) {
                           onChange={() => onToggle(id)}
                           className="mt-[2px] size-6 flex-none cursor-pointer appearance-none rounded-md border-3 border-line bg-white checked:bg-mint checked:bg-[url('data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2016%2016%22%3E%3Cpath%20d=%22M3%208.5l3%203%207-7%22%20fill=%22none%22%20stroke=%22white%22%20stroke-width=%222.5%22/%3E%3C/svg%3E')] focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-line"
                         />
-                        <span
-                          className={`flex-1 text-[16px] ${done[id] ? 'text-soft line-through' : ''}`}
-                        >
-                          {text}
+                        <span className="flex-1">
+                          <span
+                            className={`block text-[16px] ${done[id] ? 'text-soft line-through' : ''}`}
+                          >
+                            {text}
+                          </span>
+                          {why && (
+                            <span className="mt-0.5 block text-small leading-snug text-soft">
+                              {why}
+                            </span>
+                          )}
                         </span>
                         <span className="pt-[2px] text-small font-semibold whitespace-nowrap text-soft tabular-nums">
                           {value}
@@ -106,6 +115,7 @@ export function Checklist({ done, onToggle, onClear }: Props) {
                     ? 'Nothing ticked yet. Start with water.'
                     : 'Done so far. Keep going.'}
               </p>
+              {count > 0 && <ShareScore done={done} />}
               <button
                 type="button"
                 onClick={onClear}

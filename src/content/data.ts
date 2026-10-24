@@ -16,7 +16,8 @@ export type Province = [string, string, number, number, LevelKey?]
 export type ChecklistGroup = {
   id: string
   title: string
-  items: [string, string, string][]
+  // [id, item, time or amount, why it matters (optional, shown under the item)]
+  items: [string, string, string, string?][]
 }
 
 // Content for El Niño Ready. Edit this file to update advice; no code changes needed.
@@ -254,6 +255,48 @@ export const PROVINCES: Province[] = [
 ]
 
 export const CHECKLIST: ChecklistGroup[] = [
+  {
+    id: 'learn',
+    title: 'Alamin',
+    items: [
+      [
+        'learn-what',
+        'Know what El Niño is',
+        '2 min',
+        'The Pacific warms up, and the Philippines usually gets less rain and more heat for months.',
+      ],
+      [
+        'learn-province',
+        'Know what PAGASA expects for your province',
+        '2 min',
+        'Drought, dry spell or below-normal rain changes how much water you need to save.',
+      ],
+      [
+        'learn-health',
+        'Know how it hits your health',
+        '3 min',
+        'Less water means less washing, so diarrhea and other water-borne illnesses rise. Heat stroke risk goes up too.',
+      ],
+      [
+        'learn-food',
+        'Know how it hits food and prices',
+        '2 min',
+        'Dry fields mean smaller harvests, so rice and vegetable prices can climb.',
+      ],
+      [
+        'learn-utilities',
+        'Know how it hits water and power',
+        '2 min',
+        'Low dams mean water interruptions, and hot days push power demand and brownouts.',
+      ],
+      [
+        'learn-updates',
+        'Know where to get updates',
+        '1 min',
+        "PAGASA advisories, the Panahon app and your LGU's pages, not chain messages.",
+      ],
+    ],
+  },
   {
     id: 'water',
     title: 'Tubig',
@@ -550,3 +593,58 @@ export const CHILI_PITCH =
 
 // Chilimansi packs bought so far. Not counted automatically yet.
 export const CANTON_COUNT = 0
+
+// Joke lines for the share card, picked at random from the band that holds the score.
+// [lowest %, highest %, sticker label, line]. Jokes target the system, never a named official.
+export const SHARE_LINES: [number, number, string, string][] = [
+  [0, 24, 'Ayuda status', 'Kasing-handa ko ang ayuda: nasa proseso pa po.'],
+  [
+    0,
+    24,
+    'Plot twist',
+    'Ang preparedness ko, parang flood control project: may budget, walang makita.',
+  ],
+  [
+    25,
+    49,
+    'Work in progress',
+    'Kalahating handa, parang kalsadang laging inaayos.',
+  ],
+  [
+    25,
+    49,
+    'Real talk',
+    'Hindi pa ako handa, pero at least may plano. Mas marami pa sa iba.',
+  ],
+  [
+    50,
+    74,
+    'Level up',
+    'Mas handa pa ako sa ilang LGU. Hindi ako nagyayabang, nagre-report lang.',
+  ],
+  [
+    50,
+    74,
+    'Status update',
+    'Hindi na ako aasa sa ayuda. Tayo-tayo na lang talaga.',
+  ],
+  [
+    75,
+    99,
+    'Almost there',
+    'Konti na lang, mas handa na ako kaysa sa disaster budget.',
+  ],
+  [
+    75,
+    99,
+    'Flex',
+    'Tubig, check. Bentilador, check. Tiwala sa gobyerno, loading.',
+  ],
+  [100, 100, 'Certified handa', '100% handa. Ako na ang sarili kong NDRRMC.'],
+  [
+    100,
+    100,
+    'Hall of fame',
+    'Kumpleto ang checklist. Sana all, pati ang relief goods.',
+  ],
+]
