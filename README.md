@@ -1,3 +1,14 @@
+# El Niño Ready
+
+Tayo-tayo na lang: El Niño prep for every Filipino. A no-sign-up page that shows what PAGASA expects in your
+province and a household checklist saved on your phone.
+
+- Content: `src/content/data.ts` (update monthly when PAGASA issues a new El Niño advisory)
+- Run: `npm install && npm run dev`
+- Deploy: Vercel builds and publishes every push to `main` (preview URLs for pull requests). GitHub Actions only runs lint and build.
+
+---
+
 # ui-starter
 
 Starter for personal web apps: Vite + React + TypeScript + Tailwind, with my UI/UX kit wired in.
