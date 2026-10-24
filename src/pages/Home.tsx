@@ -1,24 +1,33 @@
-import { Button } from '../components/Button.tsx'
+import { Checklist } from '../components/Checklist.tsx'
+import { Faq } from '../components/Faq.tsx'
+import { Footer } from '../components/Footer.tsx'
+import { Hero } from '../components/Hero.tsx'
+import { Hotlines } from '../components/Hotlines.tsx'
+import { ProvinceCheck } from '../components/ProvinceCheck.tsx'
+import { Timeline } from '../components/Timeline.tsx'
+import { useReveal } from '../lib/reveal.ts'
+import { useStoredState } from '../lib/storage.ts'
 
 export default function Home() {
+  const [province, setProvince] = useStoredState('province', '')
+  const [done, setDone] = useStoredState<Record<string, boolean>>('done', {})
+  useReveal()
+
   return (
-    <main className="mx-auto flex min-h-svh max-w-2xl flex-col justify-center gap-6 px-6">
-      <h1 className="font-display text-4xl font-semibold text-ink">
-        ui-starter
-      </h1>
-      <p>
-        Pick a design with{' '}
-        <code className="font-mono text-ink">
-          npm run design -- &lt;name&gt;
-        </code>
-        , map its tokens into{' '}
-        <code className="font-mono text-ink">src/index.css</code>, then ask
-        Claude to build your first page.
-      </p>
-      <div className="flex gap-3">
-        <Button>Primary</Button>
-        <Button variant="secondary">Secondary</Button>
-      </div>
-    </main>
+    <div id="top">
+      <Hero />
+      <main>
+        <ProvinceCheck province={province} onChange={setProvince} />
+        <Checklist
+          done={done}
+          onToggle={(id) => setDone((d) => ({ ...d, [id]: !d[id] }))}
+          onClear={() => setDone({})}
+        />
+        <Timeline />
+        <Faq />
+        <Hotlines />
+      </main>
+      <Footer />
+    </div>
   )
 }

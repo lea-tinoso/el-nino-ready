@@ -1,31 +1,190 @@
+@import '@fontsource-variable/hanken-grotesk';
 @import 'tailwindcss';
 
 /*
- * Design tokens. Placeholder neutral values until the project picks a design:
- *   1. npm run design -- <name>   (copies ui-kit/awesome-design-md/design-md/<name>/DESIGN.md to ./DESIGN.md)
- *   2. Map the DESIGN.md `colors`, `typography` and `rounded` values onto these tokens.
+ * Design tokens, mapped from DESIGN.md (warm black, gold, water).
  * Components use only these tokens (bg-canvas, text-ink, rounded-control ...), never raw hex values.
  */
 @theme {
-  --color-canvas: #ffffff;
-  --color-surface: #f5f5f4;
-  --color-ink: #1c1917;
-  --color-body: #57534e;
-  --color-mute: #a8a29e;
-  --color-hairline: #e7e5e4;
-  --color-primary: #1c1917;
-  --color-on-primary: #ffffff;
+  --color-canvas: #0c0a08;
+  --color-surface: #181512;
+  --color-ink: #ffffff;
+  --color-copy: #efedea;
+  --color-mute: #a39d96;
+  --color-hairline: #2a241f;
+  --color-primary: #c9a45a;
+  --color-on-primary: #0c0a08;
+  --color-water: #2c6b75;
+  --color-on-water: #ffffff;
+  --color-deep: #0c0a08;
+  --color-paper: #ebe9e4;
+  --color-paper-tone: #dedbd4;
+  --color-on-paper: #0c0a08;
+  --color-paper-mute: #5f5850;
 
-  --font-sans: ui-sans-serif, system-ui, sans-serif;
-  --font-display: ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Hanken Grotesk Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-display:
+    'Hanken Grotesk Variable', ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, monospace;
 
-  --radius-control: 0.5rem;
-  --radius-card: 0.75rem;
+  --radius-control: 0;
+  --radius-card: 0;
+
+  --text-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+  --text-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --text-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
+  --text-head: clamp(2rem, 1.3rem + 3.2vw, 4rem);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @layer base {
-  body {
-    @apply bg-canvas font-sans text-body antialiased;
+  html {
+    scroll-behavior: smooth;
   }
+  body {
+    @apply bg-canvas font-sans text-copy text-body antialiased;
+    line-height: 1.5;
+  }
+  ::selection {
+    @apply bg-primary text-on-primary;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+  }
+}
+
+/* Hero: two fields meet at the waterline; the headline changes ink where it crosses. */
+.waterline {
+  --seam: 50%;
+  --display: clamp(72px, 9vw, 140px);
+}
+@media (max-width: 640px) {
+  .waterline {
+    --seam: 46%;
+    --display: 13.5vw;
+  }
+}
+.waterline .field-top {
+  clip-path: inset(0 0 calc(100% - var(--seam)) 0);
+}
+.waterline .field-bottom {
+  clip-path: inset(var(--seam) 0 0 0);
+}
+.waterline .headline {
+  font-size: var(--display);
+  line-height: 0.86;
+  top: calc(var(--seam) - 1.29 * var(--display));
+}
+
+/* Masked line reveal. Hidden state applies only once JS has marked the page. */
+.lines .line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+.lines [data-line] {
+  display: block;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .js .lines [data-line] {
+    transform: translateY(105%);
+    animation: line-rise 900ms var(--ease-out-expo) forwards;
+    animation-delay: calc(var(--i, 0) * 110ms + 100ms);
+  }
+  .js .hero-after {
+    opacity: 0;
+    animation: fade-up 700ms var(--ease-out-expo) 650ms forwards;
+  }
+  .js [data-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 700ms var(--ease-out-expo),
+      transform 700ms var(--ease-out-expo);
+    transition-delay: calc(var(--i, 0) * 75ms);
+  }
+  .js [data-reveal].is-in {
+    opacity: 1;
+    transform: none;
+  }
+  .waterline .seam-drift {
+    animation: seam-drift 9s ease-in-out infinite alternate;
+  }
+}
+@keyframes line-rise {
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes seam-drift {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(1.2vh);
+  }
+}
+
+/* Receipt slip: straight top, zigzag bottom, dotted leaders. */
+.slip {
+  --zig: 14px;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - var(--zig)),
+    95% 100%,
+    90% calc(100% - var(--zig)),
+    85% 100%,
+    80% calc(100% - var(--zig)),
+    75% 100%,
+    70% calc(100% - var(--zig)),
+    65% 100%,
+    60% calc(100% - var(--zig)),
+    55% 100%,
+    50% calc(100% - var(--zig)),
+    45% 100%,
+    40% calc(100% - var(--zig)),
+    35% 100%,
+    30% calc(100% - var(--zig)),
+    25% 100%,
+    20% calc(100% - var(--zig)),
+    15% 100%,
+    10% calc(100% - var(--zig)),
+    5% 100%,
+    0 calc(100% - var(--zig))
+  );
+}
+.leader {
+  background-image: radial-gradient(
+    circle,
+    currentColor 1.5px,
+    transparent 2px
+  );
+  background-size: 8px 4px;
+  background-repeat: repeat-x;
+  background-position: left center;
+  opacity: 0.45;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+details summary {
+  list-style: none;
+}
+details[open] .chev {
+  transform: rotate(180deg);
 }
