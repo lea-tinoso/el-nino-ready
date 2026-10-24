@@ -3,12 +3,13 @@ import { Checker } from '../components/Checker.tsx'
 import { PancitCanton } from '../components/PancitCanton.tsx'
 import { Signature } from '../components/Signature.tsx'
 
-const BASE = import.meta.env.BASE_URL
+// Relative to /chilimansi/, so links work under any base path (and in previews).
+const HOME = '../'
 
 const QRS = [
   {
     name: 'GCash',
-    src: `${BASE}qr/gcash.png`,
+    src: `${HOME}qr/gcash.png`,
     w: 560,
     h: 884,
     tab: 'bg-sky',
@@ -16,7 +17,7 @@ const QRS = [
   },
   {
     name: 'MariBank',
-    src: `${BASE}qr/maribank.png`,
+    src: `${HOME}qr/maribank.png`,
     w: 560,
     h: 520,
     tab: 'bg-sun',
@@ -37,12 +38,12 @@ export default function Chilimansi() {
         <div className="mx-auto max-w-[1240px]">
           <div className="flex items-center justify-between gap-4">
             <a
-              href={BASE}
+              href={HOME}
               className="font-display text-[18px] font-extrabold tracking-[-0.02em]"
             >
               El Niño Ready
             </a>
-            <a href={BASE} className="btn btn-small">
+            <a href={HOME} className="btn btn-small">
               <span aria-hidden>←</span> Back to the guide
             </a>
           </div>
