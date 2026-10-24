@@ -648,3 +648,41 @@ export const SHARE_LINES: [number, number, string, string][] = [
     'Kumpleto ang checklist. Sana all, pati ang relief goods.',
   ],
 ]
+
+// Short explanations for words people ask about. Shown when someone taps the dotted-underlined word.
+// [phrase exactly as it appears in the content, explanation]
+export const GLOSSARY: [string, string][] = [
+  [
+    'diarrhea',
+    'With less water, people wash hands, dishes and food less, and some drink from unsafe sources. Germs spread more easily, so diarrhea cases go up.',
+  ],
+  [
+    'dengue',
+    'Dengue mosquitoes lay eggs in clean, still water. Uncovered drums and pails of stored water become breeding spots.',
+  ],
+  ['hugas-bigas', 'The water left after washing rice.'],
+  [
+    'heat index',
+    'How hot it actually feels, counting humidity. PAGASA rates 42–51°C as danger: heat cramps and exhaustion are likely, and heat stroke is possible.',
+  ],
+  [
+    'Municipal Agriculturist',
+    "Your town hall's agriculture office. It gives advice, seeds and programs for farmers for free.",
+  ],
+  [
+    'PCIC',
+    'Philippine Crop Insurance Corporation, the government insurer for crops, livestock and fishing boats hit by calamities like drought.',
+  ],
+  [
+    'RA 9003',
+    'The Ecological Solid Waste Management Act of 2000. It bans open burning of trash.',
+  ],
+  [
+    'octopus connections',
+    'Many plugs on one outlet or extension cord. It overheats the wire and is a common cause of house fires.',
+  ],
+  [
+    'dry spell',
+    'PAGASA term: below-normal rain for 3 months in a row, or way below normal for 2. Drought is the worse stage.',
+  ],
+]

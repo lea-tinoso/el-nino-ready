@@ -1,4 +1,5 @@
 import { CHECKLIST } from '../content/data.ts'
+import { Annotated } from './Annotated.tsx'
 import { Banat } from './Banat.tsx'
 import { ShareScore } from './ShareScore.tsx'
 
@@ -77,11 +78,11 @@ export function Checklist({ done, onToggle, onClear }: Props) {
                           <span
                             className={`block text-[16px] ${done[id] ? 'text-soft line-through' : ''}`}
                           >
-                            {text}
+                            <Annotated text={text} />
                           </span>
                           {why && (
                             <span className="mt-0.5 block text-small leading-snug text-soft">
-                              {why}
+                              <Annotated text={why} />
                             </span>
                           )}
                         </span>
