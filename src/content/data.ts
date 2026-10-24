@@ -522,8 +522,10 @@ export const ROADMAP: [RoadmapWhen, string, string][] = [
   ],
 ]
 
-// Where "Suggest a feature" goes. Swap for an address on the custom domain once it exists.
-export const SUGGEST_URL = 'https://ig.me/m/leatinoso'
+// Where "Suggest a feature" goes. ImprovMX forwards ideas@ to lea's inbox, so their own address stays hidden.
+export const SUGGEST_URL =
+  'mailto:ideas@elninoready.org?subject=' +
+  encodeURIComponent('El Niño Ready: feature idea')
 
 // lea's calendar, as shown in What's next.
 export const SCHEDULE: [string, string][] = [

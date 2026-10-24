@@ -34,15 +34,11 @@ export function WhatsNext() {
             </h2>
             <p className="mt-4 max-w-[52ch]">
               Ideas for the next updates. Nothing here is live yet, and the
-              order can change. Got a better idea? Send it.
+              order can change. Got a better idea? Email it to
+              ideas@elninoready.org.
             </p>
-            <a
-              href={SUGGEST_URL}
-              target="_blank"
-              rel="noopener"
-              className="btn mt-6"
-            >
-              Suggest a feature <span aria-hidden>↗</span>
+            <a href={SUGGEST_URL} className="btn mt-6">
+              Suggest a feature <span aria-hidden>→</span>
             </a>
           </div>
           <Banat label="Out of office" className="-rotate-2 md:mb-2">
