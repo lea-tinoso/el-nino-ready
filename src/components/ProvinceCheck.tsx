@@ -11,10 +11,10 @@ import { nearestProvince } from '../lib/geo.ts'
 import { Banat } from './Banat.tsx'
 
 const TONE: Record<LevelKey, string> = {
-  drought: 'bg-danger text-white',
-  dry: 'bg-heat text-line',
-  below: 'bg-sun text-line',
-  near: 'bg-sky text-line',
+  drought: 'bg-post text-cream',
+  dry: 'bg-heat text-cream',
+  below: 'bg-sun text-ink-warm',
+  near: 'bg-sky text-ink-warm',
 }
 
 type Props = { province: string; onChange: (name: string) => void }
@@ -64,7 +64,7 @@ export function ProvinceCheck({ province, onChange }: Props) {
             <h2
               id="check-title"
               data-reveal
-              className="font-display text-[clamp(40px,5vw,72px)] leading-[0.95] font-extrabold tracking-[-0.04em]"
+              className="font-display text-[clamp(40px,5vw,72px)] leading-[0.95] font-extrabold tracking-[-0.04em] text-line"
             >
               What El Niño means where you live
             </h2>

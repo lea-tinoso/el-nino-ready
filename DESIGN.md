@@ -1,26 +1,40 @@
 # DESIGN.md — El Niño Ready
 
-Dealt by `design-taste-frontend` (direction "Type and nothing else", seed 481177902), palette "Warm black, gold",
-plus a water colour taken from the subject. Tokens live in `src/index.css` `@theme`.
+Direction: **Locker Land** (lockerland.com.au, `opl-locker-land` in the taste-skill study), picked by lea on
+2026-10-24. A retro post-office look: post red and cream fields, maroon outlines and hard maroon shadows,
+die-cut sticker lettering, a fan of tilted cards as the hero navigation, checker strips between sections.
+Tokens live in `src/index.css` `@theme`. The older dark tokens (canvas, surface, primary...) are unused leftovers.
 
 ## Colors
-| Token | Value | Role |
-| --- | --- | --- |
-| canvas | #0c0a08 | Page ground, the dry field above the waterline |
-| surface | #181512 | One tone step up (province check, footer, open FAQ row) |
-| ink | #ffffff | Headings and key text |
-| copy | #efedea | Running text |
-| mute | #a39d96 | Secondary notes only |
-| primary | #c9a45a | Gold. The one action per screen, the checklist counter, source links |
-| on-primary | #0c0a08 | Text on gold |
-| water | #2c6b75 | Below the waterline; the timeline band |
-| paper | #ebe9e4 | The receipt slip and the hotline band (low-chroma bone, not cream) |
-| on-paper | #0c0a08 | Text on paper |
+
+| Token    | Value   | Role                                                               |
+| -------- | ------- | ------------------------------------------------------------------ |
+| post     | #dc1928 | Post red. Hero, checklist, FAQ and footer fields; drought status   |
+| cream    | #fdf3db | Text on red, die-cut card borders, sticker fill                    |
+| paper    | #fdf3db | Light section ground (province check, timeline, footer)            |
+| line     | #952625 | Maroon. Every outline, hard shadow, heading on cream; hotline band |
+| ink-warm | #2b1a14 | Body text on cream and white                                       |
+| soft     | #6b4a40 | Secondary notes                                                    |
+| sun      | #e0a912 | Mustard. Primary button, checklist card, below-normal status       |
+| heat     | #d46831 | Burnt orange. Dry-condition status, Questions card                 |
+| slate    | #5b7a94 | Slate blue. Timeline card, tabo arch, Tubig header                 |
+| sky      | #9fc0d6 | Near-normal status                                                 |
+| pink     | #f2a28f | The tabo mascot, Sunog header                                      |
+| plum     | #a63c93 | Joke-sticker labels only                                           |
 
 ## Typography
-One family: Hanken Grotesk (variable, self-hosted via @fontsource). Display at 800–900, tight tracking
-(-0.03em), leading 0.86. Body 17–19px at 1.5. The dealt Fontshare faces were swapped for a self-hosted
-grotesk so the page stays light on prepaid data and legible outdoors.
+
+Bricolage Grotesque (variable, self-hosted) for display and body; display at 800 with tight tracking.
+Caveat 700 only for the "created by lea" signature. Big headlines use `.sticker-type`: cream fill, a maroon
+text-shadow ring and a hard maroon drop.
 
 ## Shape
-Square corners everywhere (radius 0). Buttons are flat gold rectangles. No shadows, gradients or rules.
+
+Pills for buttons, tabs and FAQ rows; 22–28px radius on cards. Borders 3px (6px cream on hero cards).
+Shadows are flat offsets in maroon (4–8px), never blurred. Buttons press into their shadow on click.
+
+## Patterns
+
+- Hero: sticker headline, then a fan of five tilted cards (Timeline, Checklist, My province arch, Questions, Hotlines).
+- Sticky cream pill sub-nav. Checker strips (`.checker`) between sections. Faint cream grid on red (`.grid-field`).
+- Each section gets one tilted white joke sticker (`Banat`) with its own label. The checklist items stay joke-free.

@@ -36,13 +36,12 @@ export function Footer() {
 
   return (
     <footer className="bg-paper">
-      <div aria-hidden className="checker h-8 border-b-3 border-line" />
       <div className="mx-auto max-w-[1240px] px-4 pt-16 pb-10 sm:px-8">
         <div className="grid gap-12 lg:grid-cols-2">
           <div>
-            <p className="font-display text-[clamp(48px,7vw,96px)] leading-[0.9] font-extrabold tracking-[-0.05em]">
-              El Niño Ready
-            </p>
+            <h2 className="font-display text-[clamp(40px,5vw,72px)] leading-[0.95] font-extrabold tracking-[-0.04em] text-line">
+              Pass it on
+            </h2>
             <p className="mt-4 text-lead font-semibold">
               Your neighbors need this too. Tayo-tayo na lang, remember?
             </p>
@@ -90,6 +89,14 @@ export function Footer() {
             Back to top
           </a>
         </div>
+      </div>
+      <div className="grid-field bg-post px-4 pt-16 pb-12 text-center text-cream">
+        <p className="sticker-type font-display text-[clamp(56px,11vw,160px)] leading-[0.9] font-extrabold tracking-[-0.03em]">
+          El Niño Ready
+        </p>
+        <p className="mt-6 text-small">
+          Tayo-tayo na lang. Made in the Philippines, 2026.
+        </p>
       </div>
     </footer>
   )

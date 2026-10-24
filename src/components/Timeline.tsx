@@ -5,7 +5,7 @@ export function Timeline() {
   return (
     <section
       id="timeline"
-      className="scroll-mt-4 bg-sky px-4 py-20 sm:px-8 sm:py-28"
+      className="scroll-mt-4 bg-paper px-4 py-20 sm:px-8 sm:py-28"
       aria-labelledby="time-title"
     >
       <div className="mx-auto grid max-w-[1240px] gap-12 lg:grid-cols-2 lg:items-start">
@@ -13,7 +13,7 @@ export function Timeline() {
           <h2
             id="time-title"
             data-reveal
-            className="font-display text-[clamp(40px,5vw,72px)] leading-[0.95] font-extrabold tracking-[-0.04em]"
+            className="font-display text-[clamp(40px,5vw,72px)] leading-[0.95] font-extrabold tracking-[-0.04em] text-line"
           >
             Your El Niño timeline
           </h2>

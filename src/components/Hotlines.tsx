@@ -6,7 +6,7 @@ export function Hotlines() {
   return (
     <section
       id="hotlines"
-      className="scroll-mt-4 bg-line px-4 py-20 text-white sm:px-8 sm:py-28"
+      className="scroll-mt-4 bg-line px-4 py-20 text-cream sm:px-8 sm:py-28"
       aria-labelledby="hot-title"
     >
       <div className="mx-auto grid max-w-[1240px] gap-10 lg:grid-cols-2 lg:items-center">
@@ -26,7 +26,7 @@ export function Hotlines() {
           <a
             href={main[2]}
             aria-label={`${main[0]}: call ${main[1]}`}
-            className="flex items-center justify-between gap-4 rounded-3xl border-3 border-white bg-danger px-6 py-4 font-display text-white shadow-[6px_6px_0_var(--color-sun)] transition hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-1 active:shadow-none"
+            className="flex items-center justify-between gap-4 rounded-3xl border-3 border-cream bg-post px-6 py-4 font-display text-cream shadow-[6px_6px_0_var(--color-sun)] transition hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-1 active:shadow-none"
           >
             <span className="text-[20px] font-bold">{main[0]}</span>
             <span className="text-[clamp(64px,9vw,120px)] leading-none font-extrabold tracking-[-0.05em]">
@@ -37,7 +37,7 @@ export function Hotlines() {
             <a
               key={num}
               href={tel}
-              className="flex flex-wrap items-center justify-between gap-x-4 rounded-2xl border-3 border-white bg-white px-5 py-3 text-line shadow-[4px_4px_0_var(--color-sun)] transition hover:-translate-x-0.5 hover:-translate-y-0.5"
+              className="flex flex-wrap items-center justify-between gap-x-4 rounded-2xl border-3 border-cream bg-white px-5 py-3 text-line shadow-[4px_4px_0_var(--color-sun)] transition hover:-translate-x-0.5 hover:-translate-y-0.5"
             >
               <span className="font-semibold">{name}</span>
               <span className="font-display text-[28px] font-extrabold tabular-nums">

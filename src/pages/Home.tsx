@@ -1,9 +1,11 @@
+import { Checker } from '../components/Checker.tsx'
 import { Checklist } from '../components/Checklist.tsx'
 import { Faq } from '../components/Faq.tsx'
 import { Footer } from '../components/Footer.tsx'
 import { Hero } from '../components/Hero.tsx'
 import { Hotlines } from '../components/Hotlines.tsx'
 import { ProvinceCheck } from '../components/ProvinceCheck.tsx'
+import { SubNav } from '../components/SubNav.tsx'
 import { Timeline } from '../components/Timeline.tsx'
 import { useReveal } from '../lib/reveal.ts'
 import { useStoredState } from '../lib/storage.ts'
@@ -16,17 +18,22 @@ export default function Home() {
   return (
     <div id="top">
       <Hero />
-      <main>
+      <SubNav />
+      <main className="-mt-[58px]">
         <ProvinceCheck province={province} onChange={setProvince} />
+        <Checker />
         <Checklist
           done={done}
           onToggle={(id) => setDone((d) => ({ ...d, [id]: !d[id] }))}
           onClear={() => setDone({})}
         />
+        <Checker />
         <Timeline />
+        <Checker />
         <Faq />
         <Hotlines />
       </main>
+      <Checker />
       <Footer />
     </div>
   )

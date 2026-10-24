@@ -4,7 +4,8 @@ import { Banat } from './Banat.tsx'
 export function Faq() {
   return (
     <section
-      className="border-y-3 border-line bg-pink px-4 py-20 sm:px-8 sm:py-28"
+      id="faq"
+      className="bg-post px-4 text-cream py-20 sm:px-8 sm:py-28"
       aria-labelledby="faq-title"
     >
       <div className="mx-auto grid max-w-[1240px] gap-10 lg:grid-cols-[1fr_1.4fr]">
@@ -26,7 +27,7 @@ export function Faq() {
               key={q}
               data-reveal
               style={{ '--i': i } as React.CSSProperties}
-              className="group rounded-2xl border-3 border-line bg-white px-5 py-4 shadow-[4px_4px_0_var(--color-line)]"
+              className="group rounded-[28px] border-3 border-line bg-white px-6 py-4 text-ink-warm shadow-[4px_4px_0_var(--color-line)]"
             >
               <summary className="flex cursor-pointer items-center justify-between gap-6 text-[19px] font-bold">
                 {q}

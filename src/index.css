@@ -18,30 +18,35 @@
   --color-water: #2c6b75;
   --color-on-water: #ffffff;
   --color-deep: #0c0a08;
-  --color-paper: #f4f4f0;
+  --color-paper: #fdf3db;
   --color-paper-tone: #dedbd4;
   --color-on-paper: #0c0a08;
   --color-paper-mute: #5f5850;
 
   /* Neo-brutalist palette (after lea-showcase): flat brights, thick ink lines, hard offset shadows. */
-  --color-line: #111111;
-  --color-sun: #ffc900;
-  --color-heat: #ff8a3d;
-  --color-pink: #ff90e8;
-  --color-sky: #7cc8ff;
-  --color-mint: #23a094;
+  --color-line: #952625;
+  --color-sun: #e0a912;
+  --color-heat: #d46831;
+  --color-pink: #f2a28f;
+  --color-sky: #9fc0d6;
+  --color-mint: #5b7a94;
   --color-clay: #c98b5a;
   --color-plum: #a63c93;
-  --color-danger: #d7263d;
+  --color-danger: #dc1928;
   --color-mint-soft: #9be3d6;
-  --color-soft: #4a4a46;
-  --color-link: #1f5fd1;
+  --color-soft: #6b4a40;
+  --color-link: #952625;
+  /* Locker Land: post red and cream fields, maroon outlines and shadows. */
+  --color-post: #dc1928;
+  --color-cream: #fdf3db;
+  --color-slate: #5b7a94;
+  --color-ink-warm: #2b1a14;
   --font-hand: 'Caveat', cursive;
 
   --font-sans:
     'Bricolage Grotesque Variable', ui-sans-serif, system-ui, sans-serif;
   --font-display:
-    'Hanken Grotesk Variable', ui-sans-serif, system-ui, sans-serif;
+    'Bricolage Grotesque Variable', ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, monospace;
 
   --radius-control: 0;
@@ -60,7 +65,7 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-paper font-sans text-line text-body antialiased;
+    @apply bg-paper font-sans text-ink-warm text-body antialiased;
     line-height: 1.5;
   }
   ::selection {
@@ -230,6 +235,36 @@ details[open] .chev {
 .btn:active {
   transform: translate(4px, 4px);
   box-shadow: 0 0 0 var(--color-line);
+}
+
+.btn-small {
+  min-height: 44px;
+  padding: 0 18px;
+  background: var(--color-cream);
+  font-size: 16px;
+}
+
+/* Locker Land field: post red with a faint cream grid. */
+.grid-field {
+  background-image:
+    linear-gradient(rgb(255 255 255 / 0.08) 2px, transparent 2px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.08) 2px, transparent 2px);
+  background-size: 48px 48px;
+}
+
+/* Die-cut sticker lettering: cream fill, maroon ring, hard maroon drop. */
+.sticker-type {
+  color: var(--color-cream);
+  text-shadow:
+    0.035em 0 0 var(--color-line),
+    -0.035em 0 0 var(--color-line),
+    0 0.035em 0 var(--color-line),
+    0 -0.035em 0 var(--color-line),
+    0.025em 0.025em 0 var(--color-line),
+    -0.025em 0.025em 0 var(--color-line),
+    0.025em -0.025em 0 var(--color-line),
+    -0.025em -0.025em 0 var(--color-line),
+    0.07em 0.08em 0 var(--color-line);
 }
 
 .note {

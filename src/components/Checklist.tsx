@@ -8,7 +8,13 @@ type Props = {
 }
 
 const TOTAL = CHECKLIST.reduce((n, g) => n + g.items.length, 0)
-const GROUP_BG = ['bg-sky', 'bg-heat', 'bg-mint-soft', 'bg-sun', 'bg-pink']
+const GROUP_BG = [
+  'bg-slate text-cream',
+  'bg-heat text-cream',
+  'bg-sun',
+  'bg-post text-cream',
+  'bg-pink',
+]
 
 export function Checklist({ done, onToggle, onClear }: Props) {
   const count = CHECKLIST.reduce(
@@ -19,7 +25,7 @@ export function Checklist({ done, onToggle, onClear }: Props) {
   return (
     <section
       id="checklist"
-      className="scroll-mt-4 border-y-3 border-line bg-sun px-4 py-20 sm:px-8 sm:py-28"
+      className="scroll-mt-4 bg-post px-4 text-cream py-20 sm:px-8 sm:py-28"
       aria-labelledby="list-title"
     >
       <div className="mx-auto max-w-[1240px]">
@@ -48,7 +54,7 @@ export function Checklist({ done, onToggle, onClear }: Props) {
               <div
                 key={group.id}
                 data-reveal
-                className="overflow-hidden rounded-3xl border-3 border-line bg-white shadow-[6px_6px_0_var(--color-line)]"
+                className="overflow-hidden rounded-3xl border-3 border-line bg-white text-ink-warm shadow-[6px_6px_0_var(--color-line)]"
               >
                 <h3
                   className={`border-b-3 border-line px-5 py-3 font-display text-[22px] font-extrabold ${GROUP_BG[gi % GROUP_BG.length]}`}
@@ -82,7 +88,7 @@ export function Checklist({ done, onToggle, onClear }: Props) {
           </div>
 
           <aside className="lg:sticky lg:top-6">
-            <div className="rotate-1 rounded-3xl border-3 border-line bg-white p-6 shadow-[8px_8px_0_var(--color-line)]">
+            <div className="rotate-1 rounded-3xl border-3 border-line bg-white p-6 text-ink-warm shadow-[8px_8px_0_var(--color-line)]">
               <p className="font-display text-[88px] leading-none font-extrabold tracking-[-0.05em] tabular-nums">
                 {count}
                 <span className="text-soft">/{TOTAL}</span>
