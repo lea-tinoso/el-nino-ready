@@ -38,7 +38,9 @@ export default function Home() {
       </main>
       <Checker />
       <Footer />
-      <ChilimansiPopup />
+      <ChilimansiPopup
+        engaged={province !== '' || Object.values(done).some(Boolean)}
+      />
     </div>
   )
 }
