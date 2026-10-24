@@ -537,3 +537,6 @@ export const SCHEDULE: [string, string][] = [
 // The chilimansi ask, shown in the popup and on the chilimansi page.
 export const CHILI_PITCH =
   "El Niño Ready is a personal project, built to help fellow Filipinos get ready. It's free and it stays free. If it helped you or really you just want to make my day, you can buy me a chilimansi pancit canton. Totally optional."
+
+// Chilimansi packs bought so far. Not counted automatically yet.
+export const CANTON_COUNT = 0
