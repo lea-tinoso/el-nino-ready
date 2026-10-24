@@ -2,6 +2,7 @@ import { ChilimansiPopup } from '../components/ChilimansiPopup.tsx'
 import { Checker } from '../components/Checker.tsx'
 import { Checklist } from '../components/Checklist.tsx'
 import { Faq } from '../components/Faq.tsx'
+import { FloatingChili } from '../components/FloatingChili.tsx'
 import { Footer } from '../components/Footer.tsx'
 import { Hero } from '../components/Hero.tsx'
 import { Hotlines } from '../components/Hotlines.tsx'
@@ -41,6 +42,7 @@ export default function Home() {
       </main>
       <Checker />
       <Footer />
+      <FloatingChili />
       <ChilimansiPopup
         engaged={province !== '' || Object.values(done).some(Boolean)}
       />
