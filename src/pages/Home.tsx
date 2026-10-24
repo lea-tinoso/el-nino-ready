@@ -6,6 +6,7 @@ import { Footer } from '../components/Footer.tsx'
 import { Hero } from '../components/Hero.tsx'
 import { Hotlines } from '../components/Hotlines.tsx'
 import { ProvinceCheck } from '../components/ProvinceCheck.tsx'
+import { Reel } from '../components/Reel.tsx'
 import { SubNav } from '../components/SubNav.tsx'
 import { Timeline } from '../components/Timeline.tsx'
 import { WhatsNext } from '../components/WhatsNext.tsx'
@@ -22,6 +23,8 @@ export default function Home() {
       <Hero />
       <SubNav />
       <main className="-mt-[58px]">
+        <Reel />
+        <Checker />
         <ProvinceCheck province={province} onChange={setProvince} />
         <Checker />
         <Checklist

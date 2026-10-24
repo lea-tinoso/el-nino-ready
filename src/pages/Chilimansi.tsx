@@ -1,5 +1,6 @@
 import { CHILI_PITCH } from '../content/data.ts'
 import { Banat } from '../components/Banat.tsx'
+import { CantonCounter } from '../components/CantonCounter.tsx'
 import { Checker } from '../components/Checker.tsx'
 import { PancitCanton } from '../components/PancitCanton.tsx'
 import { Signature } from '../components/Signature.tsx'
@@ -113,6 +114,8 @@ export default function Chilimansi() {
               </li>
             ))}
           </ol>
+
+          <CantonCounter />
 
           <div className="mt-14 flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
             <Banat label="Transparency report" className="rotate-[1.5deg]">
