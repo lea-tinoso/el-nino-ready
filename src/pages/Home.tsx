@@ -13,6 +13,14 @@ export default function Home() {
   const [done, setDone] = useStoredState<Record<string, boolean>>('done', {})
   useReveal()
 
+  if (import.meta.env.VITE_HERO_ONLY) {
+    return (
+      <div id="top" className="min-h-svh bg-paper">
+        <Hero />
+      </div>
+    )
+  }
+
   return (
     <div id="top">
       <Hero />
