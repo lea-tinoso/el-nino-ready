@@ -20,25 +20,21 @@ export function Signature() {
           software engineer who prepped for El Niño by shipping a website
           instead of buying a water drum.
         </p>
+        <p className="mt-1 max-w-[280px] text-[14px] leading-snug">
+          <a
+            className="font-semibold text-link hover:underline"
+            href="https://www.instagram.com/leatinoso/"
+            target="_blank"
+            rel="noopener"
+          >
+            @leatinoso ↗
+          </a>{' '}
+          <span className="text-soft">
+            for hellos and OPM recos. Currently on repeat: Maki, Adie, Cup of
+            Joe, Rob Deniel.
+          </span>
+        </p>
         <p className="mt-1 text-[14px]">
-          <a
-            className="font-semibold text-link hover:underline"
-            href="https://github.com/lea-tinoso/el-nino-ready#readme"
-            target="_blank"
-            rel="noopener"
-          >
-            how it's made ↗
-          </a>
-          <span aria-hidden> · </span>
-          <a
-            className="font-semibold text-link hover:underline"
-            href="https://lea-showcase.vercel.app"
-            target="_blank"
-            rel="noopener"
-          >
-            portfolio ↗
-          </a>
-          <span aria-hidden> · </span>
           <a
             className="font-semibold text-link hover:underline"
             href={`${import.meta.env.BASE_URL}chilimansi/`}

@@ -399,12 +399,21 @@ export const CHECKLIST: ChecklistGroup[] = [
   },
 ]
 
-export const HOTLINES: [string, string, string][] = [
+// Rows: [name, number as shown, tel: link, small note?]. The comma in a tel: link pauses, then dials the local.
+export const HOTLINES: [string, string, string, string?][] = [
   ['National emergency', '911', 'tel:911'],
   ['Philippine Red Cross', '143', 'tel:143'],
-  ['NDRRMC Operations Center', '(02) 8911-1406', 'tel:+63289111406'],
+  [
+    'NDRRMC Operations Center',
+    '(02) 8911-5061 to 65',
+    'tel:+63289115061,100',
+    'local 100',
+  ],
   ['DOH Health Emergency', '1555', 'tel:1555'],
 ]
+
+// The government's directory of agency hotlines.
+export const EHOTLINES_URL = 'https://ehotlines.e.gov.ph/'
 
 export const FAQ: [string, string][] = [
   [
@@ -478,6 +487,11 @@ export type RoadmapWhen = 'Next' | 'Later' | 'Maybe'
 export const ROADMAP: [RoadmapWhen, string, string][] = [
   [
     'Next',
+    'Local emergency contacts',
+    'Your province and city DRRMO, hospitals and utilities, from official government pages.',
+  ],
+  [
+    'Next',
     'Works offline',
     'Open the checklist and hotlines even with no signal or no load.',
   ],
@@ -507,6 +521,9 @@ export const ROADMAP: [RoadmapWhen, string, string][] = [
     'Go past region-level once PAGASA data allows it.',
   ],
 ]
+
+// Where "Suggest a feature" goes. Swap for an address on the custom domain once it exists.
+export const SUGGEST_URL = 'https://ig.me/m/leatinoso'
 
 // lea's calendar, as shown in What's next.
 export const SCHEDULE: [string, string][] = [

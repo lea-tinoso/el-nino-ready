@@ -1,4 +1,9 @@
-import { ROADMAP, SCHEDULE, type RoadmapWhen } from '../content/data.ts'
+import {
+  ROADMAP,
+  SCHEDULE,
+  SUGGEST_URL,
+  type RoadmapWhen,
+} from '../content/data.ts'
 import { Banat } from './Banat.tsx'
 
 const PILL: Record<RoadmapWhen, string> = {
@@ -29,8 +34,16 @@ export function WhatsNext() {
             </h2>
             <p className="mt-4 max-w-[52ch]">
               Ideas for the next updates. Nothing here is live yet, and the
-              order can change.
+              order can change. Got a better idea? Send it.
             </p>
+            <a
+              href={SUGGEST_URL}
+              target="_blank"
+              rel="noopener"
+              className="btn mt-6"
+            >
+              Suggest a feature <span aria-hidden>↗</span>
+            </a>
           </div>
           <Banat label="Out of office" className="-rotate-2 md:mb-2">
             Fully booked ako hanggang December, parang flood control budget.

@@ -1,4 +1,4 @@
-import { HOTLINES } from '../content/data.ts'
+import { EHOTLINES_URL, HOTLINES } from '../content/data.ts'
 import { Banat } from './Banat.tsx'
 
 export function Hotlines() {
@@ -33,18 +33,34 @@ export function Hotlines() {
               {main[1]}
             </span>
           </a>
-          {rest.map(([name, num, tel]) => (
+          {rest.map(([name, num, tel, note]) => (
             <a
               key={num}
               href={tel}
               className="flex flex-wrap items-center justify-between gap-x-4 rounded-2xl border-3 border-cream bg-white px-5 py-3 text-line shadow-[4px_4px_0_var(--color-sun)] transition hover:-translate-x-0.5 hover:-translate-y-0.5"
             >
               <span className="font-semibold">{name}</span>
-              <span className="font-display text-[28px] font-extrabold tabular-nums">
+              <span className="text-right font-display text-[28px] leading-tight font-extrabold tabular-nums">
                 {num}
+                {note && (
+                  <span className="block text-[15px] font-bold">{note}</span>
+                )}
               </span>
             </a>
           ))}
+          <a
+            href={EHOTLINES_URL}
+            target="_blank"
+            rel="noopener"
+            className="flex flex-wrap items-center justify-between gap-x-4 rounded-2xl border-3 border-dashed border-cream px-5 py-3 font-semibold transition hover:bg-post"
+          >
+            <span>
+              Need another agency? Every government hotline, in one list.
+            </span>
+            <span className="font-display text-[20px] font-extrabold">
+              eHotlines ↗
+            </span>
+          </a>
         </div>
       </div>
     </section>
