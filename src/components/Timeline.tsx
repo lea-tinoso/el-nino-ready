@@ -21,7 +21,7 @@ export function Timeline() {
             PAGASA says El Niño may peak before the end of 2026 and last into
             mid-2027. Here is what to do, and when.
           </p>
-          <Banat className="mt-8 -rotate-2">
+          <Banat label="Pawis report" className="mt-8 -rotate-2">
             Init na init? Pati singit? Tiis lang, hanggang mid-2027 pa 'to.
           </Banat>
         </div>

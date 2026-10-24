@@ -73,7 +73,7 @@ export function ProvinceCheck({ province, onChange }: Props) {
               on your phone. We never collect or store it.
             </p>
           </div>
-          <Banat className="rotate-2 md:mb-2">
+          <Banat label="Plot twist" className="rotate-2 md:mb-2">
             Ang tubig ngayon, parang pondo ng bayan: bigla na lang nawawala.
           </Banat>
         </div>

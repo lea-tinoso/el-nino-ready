@@ -37,7 +37,7 @@ export function Checklist({ done, onToggle, onClear }: Props) {
               only. Share the list with your family group chat.
             </p>
           </div>
-          <Banat className="-rotate-2 md:mb-2">
+          <Banat label="Real talk" className="-rotate-2 md:mb-2">
             Hindi 'to flood control project. Matatapos mo talaga 'to.
           </Banat>
         </div>

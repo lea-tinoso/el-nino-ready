@@ -18,7 +18,7 @@ export function Hotlines() {
           >
             In an emergency, don't scroll. Call.
           </h2>
-          <Banat className="mt-8 -rotate-2">
+          <Banat label="Paalala" className="mt-8 -rotate-2">
             Itong mga number na 'to, sumasagot. Hindi laging "naka-leave."
           </Banat>
         </div>

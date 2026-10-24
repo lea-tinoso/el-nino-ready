@@ -16,7 +16,7 @@ export function Faq() {
           >
             Questions, answered plainly
           </h2>
-          <Banat className="mt-8 rotate-2">
+          <Banat label="Tanong lang po" className="mt-8 rotate-2">
             Mas madali pa 'tong sagutin kaysa "Saan napunta ang pondo?"
           </Banat>
         </div>
