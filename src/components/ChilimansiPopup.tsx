@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { CHILI_PITCH } from '../content/data.ts'
 import { useStoredState } from '../lib/storage.ts'
 import { Banat } from './Banat.tsx'
 import { PancitCanton } from './PancitCanton.tsx'
@@ -69,11 +70,7 @@ export function ChilimansiPopup({ engaged }: { engaged: boolean }) {
       >
         This one's on me.
       </h2>
-      <p className="mx-auto mt-3 max-w-[42ch]">
-        El Niño Ready is a personal project, built to help fellow Filipinos get
-        ready. It's free and it stays free. If it helped you, you can buy me a
-        chilimansi pancit canton. Totally optional.
-      </p>
+      <p className="mx-auto mt-3 max-w-[42ch]">{CHILI_PITCH}</p>
       <Banat
         label="Tax season, all season"
         className="mx-auto mt-5 -rotate-2 text-left"
